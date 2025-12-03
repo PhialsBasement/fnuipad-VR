@@ -1,4 +1,4 @@
-# FNUIPad - VR Gamepad Mapper
+# VR Gamepad Mapper
 
 A Linux tool that maps VR controller inputs to a virtual gamepad using OpenVR and uinput. Play non-VR games with your VR controllers.
 
@@ -227,6 +227,25 @@ python test_gamepad.py
 python test_gamepad.py --interactive
 ```
 
+Test evdev and 32-button support (including Wine compatibility):
+
+```bash
+# Basic evdev test
+python test_wine_evdev.py
+
+# Verbose output
+python test_wine_evdev.py -v
+
+# Include Wine detection test
+python test_wine_evdev.py --wine
+
+# Include stress test
+python test_wine_evdev.py --stress
+
+# All tests
+python test_wine_evdev.py -v --wine --stress
+```
+
 Verify with evtest:
 
 ```bash
@@ -266,6 +285,9 @@ Run `python wine_setup.py evdev` to enable full button detection in Wine/Proton 
 | `config_gui.py` | Configuration GUI |
 | `monitor_gui.py` | Gamepad state monitor |
 | `test_gamepad.py` | Testing utility |
+| `test_wine_evdev.py` | evdev and Wine compatibility test |
+| `wine_joy_test.c` | Windows joystick test source (for Wine) |
+| `wine_joy_test.exe` | Compiled Windows test (auto-built if missing) |
 | `setup-script.sh` | Permission setup script |
 | `wine_setup.py` | Wine/Proton configuration |
 
