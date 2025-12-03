@@ -1,0 +1,320 @@
+{
+  "name": "Default",
+  "mappings": [
+    {
+      "name": "Left Stick X",
+      "input": { "type": "axis", "controller": "left", "name": "trackpad_x" },
+      "output": { "type": "axis", "name": "left_stick_x" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.15 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Stick Y",
+      "input": { "type": "axis", "controller": "left", "name": "trackpad_y" },
+      "output": { "type": "axis", "name": "left_stick_y" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.15 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Stick X",
+      "input": { "type": "axis", "controller": "right", "name": "trackpad_x" },
+      "output": { "type": "axis", "name": "right_stick_x" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.15 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Stick Y",
+      "input": { "type": "axis", "controller": "right", "name": "trackpad_y" },
+      "output": { "type": "axis", "name": "right_stick_y" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.15 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Trigger",
+      "input": { "type": "axis", "controller": "left", "name": "trigger" },
+      "output": { "type": "axis", "name": "left_trigger" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Trigger",
+      "input": { "type": "axis", "controller": "right", "name": "trigger" },
+      "output": { "type": "axis", "name": "right_trigger" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Bumper",
+      "input": { "type": "button", "controller": "left", "name": "grip_click" },
+      "output": { "type": "button", "name": "lb" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Bumper",
+      "input": { "type": "button", "controller": "right", "name": "grip_click" },
+      "output": { "type": "button", "name": "rb" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "D-pad Up",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "axis", "name": "dpad_y" },
+      "conditions": [
+        { "type": "axis_above", "controller": "left", "input": "trackpad_y", "value": 0.5 }
+      ],
+      "modifiers": { "invert": true, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "D-pad Down",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "axis", "name": "dpad_y" },
+      "conditions": [
+        { "type": "axis_below", "controller": "left", "input": "trackpad_y", "value": -0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "D-pad Left",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "axis", "name": "dpad_x" },
+      "conditions": [
+        { "type": "axis_below", "controller": "left", "input": "trackpad_x", "value": -0.5 }
+      ],
+      "modifiers": { "invert": true, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "D-pad Right",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "axis", "name": "dpad_x" },
+      "conditions": [
+        { "type": "axis_above", "controller": "left", "input": "trackpad_x", "value": 0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "L3 (Center Click)",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "ls" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "A (Down Zone)",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "a" },
+      "conditions": [
+        { "type": "axis_below", "controller": "right", "input": "trackpad_y", "value": -0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "Y (Up Zone)",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "y" },
+      "conditions": [
+        { "type": "axis_above", "controller": "right", "input": "trackpad_y", "value": 0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "X (Left Zone)",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "x" },
+      "conditions": [
+        { "type": "axis_below", "controller": "right", "input": "trackpad_x", "value": -0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "B (Right Zone)",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "b" },
+      "conditions": [
+        { "type": "axis_above", "controller": "right", "input": "trackpad_x", "value": 0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "R3 (Center Click)",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "rs" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "LS Up",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "ls_up" },
+      "conditions": [
+        { "type": "axis_above", "controller": "left", "input": "trackpad_y", "value": 0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "LS Down",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "ls_down" },
+      "conditions": [
+        { "type": "axis_below", "controller": "left", "input": "trackpad_y", "value": -0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "LS Left",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "ls_left" },
+      "conditions": [
+        { "type": "axis_below", "controller": "left", "input": "trackpad_x", "value": -0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "LS Right",
+      "input": { "type": "button", "controller": "left", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "ls_right" },
+      "conditions": [
+        { "type": "axis_above", "controller": "left", "input": "trackpad_x", "value": 0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "RS Up",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "rs_up" },
+      "conditions": [
+        { "type": "axis_above", "controller": "right", "input": "trackpad_y", "value": 0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "RS Down",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "rs_down" },
+      "conditions": [
+        { "type": "axis_below", "controller": "right", "input": "trackpad_y", "value": -0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "RS Left",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "rs_left" },
+      "conditions": [
+        { "type": "axis_below", "controller": "right", "input": "trackpad_x", "value": -0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "RS Right",
+      "input": { "type": "button", "controller": "right", "name": "trackpad_click" },
+      "output": { "type": "button", "name": "rs_right" },
+      "conditions": [
+        { "type": "axis_above", "controller": "right", "input": "trackpad_x", "value": 0.5 }
+      ],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "Select",
+      "input": { "type": "button", "controller": "left", "name": "menu" },
+      "output": { "type": "button", "name": "select" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Start",
+      "input": { "type": "button", "controller": "right", "name": "menu" },
+      "output": { "type": "button", "name": "start" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Guide",
+      "input": { "type": "button", "controller": "right", "name": "system" },
+      "output": { "type": "button", "name": "guide" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Trigger Click",
+      "input": { "type": "button", "controller": "left", "name": "trigger_click" },
+      "output": { "type": "button", "name": "btn_21" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Trigger Click",
+      "input": { "type": "button", "controller": "right", "name": "trigger_click" },
+      "output": { "type": "button", "name": "btn_22" },
+      "conditions": [],
+      "modifiers": { "invert": false, "sensitivity": 1.0, "deadzone": 0.0 },
+      "priority": 0,
+      "enabled": true
+    }
+  ],
+  "settings": {
+    "global_deadzone": 0.15,
+    "haptic_intensity": 0.5
+  }
+}

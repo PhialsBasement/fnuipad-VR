@@ -1,0 +1,383 @@
+{
+  "name": "Default",
+  "mappings": [
+    {
+      "name": "Guide (Chord)",
+      "input": {
+        "type": "button",
+        "controller": "right",
+        "name": "trigger_click"
+      },
+      "output": {
+        "type": "button",
+        "name": "btn_20"
+      },
+      "conditions": [
+        {
+          "type": "button_held",
+          "controller": "right",
+          "input": "grip_click",
+          "value": 0.5
+        }
+      ],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "left.trigger_click",
+      "input": {
+        "type": "button",
+        "controller": "left",
+        "name": "trigger_click"
+      },
+      "output": {
+        "type": "button",
+        "name": "btn_21"
+      },
+      "conditions": [
+        {
+          "type": "button_held",
+          "controller": "left",
+          "input": "grip_click",
+          "value": 0.5
+        }
+      ],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Stick X",
+      "input": {
+        "type": "axis",
+        "controller": "left",
+        "name": "thumbstick_x"
+      },
+      "output": {
+        "type": "axis",
+        "name": "left_stick_x"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Stick Y",
+      "input": {
+        "type": "axis",
+        "controller": "left",
+        "name": "thumbstick_y"
+      },
+      "output": {
+        "type": "axis",
+        "name": "left_stick_y"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": true,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Stick X",
+      "input": {
+        "type": "axis",
+        "controller": "right",
+        "name": "thumbstick_x"
+      },
+      "output": {
+        "type": "axis",
+        "name": "right_stick_x"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Stick Y",
+      "input": {
+        "type": "axis",
+        "controller": "right",
+        "name": "thumbstick_y"
+      },
+      "output": {
+        "type": "axis",
+        "name": "right_stick_y"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": true,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Trigger",
+      "input": {
+        "type": "axis",
+        "controller": "left",
+        "name": "trigger"
+      },
+      "output": {
+        "type": "axis",
+        "name": "left_trigger"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Trigger",
+      "input": {
+        "type": "axis",
+        "controller": "right",
+        "name": "trigger"
+      },
+      "output": {
+        "type": "axis",
+        "name": "right_trigger"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Bumper",
+      "input": {
+        "type": "button",
+        "controller": "left",
+        "name": "grip_click"
+      },
+      "output": {
+        "type": "button",
+        "name": "lb"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Bumper",
+      "input": {
+        "type": "button",
+        "controller": "right",
+        "name": "grip_click"
+      },
+      "output": {
+        "type": "button",
+        "name": "rb"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "A Button",
+      "input": {
+        "type": "button",
+        "controller": "right",
+        "name": "a_button"
+      },
+      "output": {
+        "type": "button",
+        "name": "a"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "B Button",
+      "input": {
+        "type": "button",
+        "controller": "right",
+        "name": "b_button"
+      },
+      "output": {
+        "type": "button",
+        "name": "b"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "X Button",
+      "input": {
+        "type": "button",
+        "controller": "left",
+        "name": "x_button"
+      },
+      "output": {
+        "type": "button",
+        "name": "x"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Y Button",
+      "input": {
+        "type": "button",
+        "controller": "left",
+        "name": "y_button"
+      },
+      "output": {
+        "type": "button",
+        "name": "y"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Left Stick Click",
+      "input": {
+        "type": "button",
+        "controller": "left",
+        "name": "thumbstick_click"
+      },
+      "output": {
+        "type": "button",
+        "name": "ls"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Right Stick Click",
+      "input": {
+        "type": "button",
+        "controller": "right",
+        "name": "thumbstick_click"
+      },
+      "output": {
+        "type": "button",
+        "name": "rs"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Start",
+      "input": {
+        "type": "button",
+        "controller": "right",
+        "name": "menu"
+      },
+      "output": {
+        "type": "button",
+        "name": "start"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    },
+    {
+      "name": "Select",
+      "input": {
+        "type": "button",
+        "controller": "left",
+        "name": "menu"
+      },
+      "output": {
+        "type": "button",
+        "name": "select"
+      },
+      "conditions": [],
+      "modifiers": {
+        "invert": false,
+        "sensitivity": 1.0,
+        "deadzone": 0.0
+      },
+      "priority": 0,
+      "enabled": true
+    }
+  ],
+  "settings": {
+    "global_deadzone": 0.1,
+    "haptic_intensity": 0.5
+  }
+}
