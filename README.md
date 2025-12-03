@@ -1,4 +1,4 @@
-# VR Gamepad Mapper
+# FNUIPad - VR Gamepad Mapper
 
 A Linux tool that maps VR controller inputs to a virtual gamepad using OpenVR and uinput. Play non-VR games with your VR controllers.
 
