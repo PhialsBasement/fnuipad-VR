@@ -36,7 +36,11 @@ int main() {
             if (!testFound || (testButtons == 0 && caps.wNumButtons > 0)) {
                 if (wcsstr(caps.szPname, L"Test Gamepad") != NULL ||
                     wcsstr(caps.szPname, L"vJoy") != NULL ||
-                    (caps.wMid == 0x1234 && caps.wPid == 0xBEAD)) {
+                    wcsstr(caps.szPname, L"G29") != NULL ||
+                    wcsstr(caps.szPname, L"Logitech") != NULL ||
+                    wcsstr(caps.szPname, L"Driving Force") != NULL ||
+                    (caps.wMid == 0x1234 && caps.wPid == 0xBEAD) ||
+                    (caps.wMid == 0x046d && caps.wPid == 0xc24f)) {  /* Logitech G29 */
                     testFound = 1;
                     testButtons = caps.wNumButtons;
                     testAxes = caps.wNumAxes;
