@@ -116,6 +116,7 @@ class LinuxGamepad:
             vendor=vendor if vendor is not None else DEFAULT_VENDOR,
             product=product if product is not None else DEFAULT_PRODUCT,
             version=version if version is not None else DEFAULT_VERSION,
+            bustype=e.BUS_USB,  # Present as USB device for Wine compatibility
         )
         
         self._pending = False
