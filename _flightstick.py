@@ -168,7 +168,7 @@ class FlightStickConfig:
     # Invert axes if needed
     invert_pitch: bool = False  # True = pull back for nose up
     invert_roll: bool = False
-    invert_rudder: bool = False
+    invert_rudder: bool = True
 
     # Throttle configuration
     # Throttle anchor (left hand rest position)
@@ -276,14 +276,15 @@ class FlightStickImage:
 
         self.rotation_matrix = None
 
-    def update(self, pitch: float, roll: float, anchor: Point, length: float):
-        """Update stick position and rotation based on pitch and roll"""
+    def update(self, pitch: float, roll: float, anchor: Point, length: float, twist: float = 0.0):
+        """Update stick position and rotation based on pitch, roll, and twist (rudder)"""
         if self.rotation_matrix is None:
             self.rotation_matrix = openvr.HmdMatrix34_t()
 
         # Calculate stick tip position based on pitch and roll
         # Pitch: rotation around X axis (forward/back)
         # Roll: rotation around Z axis (left/right)
+        # Twist: rotation around Y axis (rudder)
         # Negate angles so overlay follows controller direction
 
         # Start with identity
@@ -313,11 +314,15 @@ class FlightStickImage:
             self.stick, openvr.TrackingUniverseSeated, result
         )
 
-        # Grip position at top of stick
+        # Grip position at top of stick - also apply twist rotation
         grip_result = copy.copy(result)
         grip_result.m[0][3] = anchor.x + result.m[0][1] * grip_y
         grip_result.m[1][3] = anchor.y + result.m[1][1] * grip_y
         grip_result.m[2][3] = anchor.z + result.m[2][1] * grip_y
+
+        # Apply twist (rudder) rotation around Y axis to the grip
+        twist_mat = init_rotation_matrix(1, -twist)
+        grip_result = mat_mul_33(twist_mat, grip_result)
 
         self.vroverlay.setOverlayTransformAbsolute(
             self.grip, openvr.TrackingUniverseSeated, grip_result
@@ -797,8 +802,10 @@ class FlightStick:
         # Throttle -> Left trigger or axis
 
         self.gamepad.set_stick('right', self._roll, self._pitch)
-        self.gamepad.set_stick('left', self._rudder, 0)
-        self.gamepad.set_trigger('left', self._throttle)
+        # Throttle: convert 0-1 range to -1 to 1 for full axis range
+        # 0% throttle = -1, 100% throttle = 1
+        throttle_axis = (self._throttle * 2.0) - 1.0
+        self.gamepad.set_stick('left', self._rudder, throttle_axis)
         self.gamepad.sync()
 
     def render(self):
@@ -806,11 +813,14 @@ class FlightStick:
         if self.stick_image is not None and self.config.show_stick:
             # Convert axis values to angles for visualization
             max_angle = self.config.max_deflection_degrees * pi / 180.0
+            max_twist = self.config.max_twist_degrees * pi / 180.0
             pitch_angle = self._pitch * max_angle
             roll_angle = self._roll * max_angle
+            twist_angle = self._rudder * max_twist
 
             self.stick_image.update(pitch_angle, roll_angle,
-                                   self.stick_anchor, self.config.stick_length)
+                                   self.stick_anchor, self.config.stick_length,
+                                   twist_angle)
             self.stick_image.show()
         elif self.stick_image is not None:
             self.stick_image.hide()
