@@ -72,7 +72,7 @@ class FlightStickApplication:
         # Initialize OpenVR
         print("Initializing OpenVR...")
         try:
-            openvr.init(openvr.VRApplication_Background)
+            openvr.init(openvr.VRApplication_Overlay)
         except openvr.OpenVRError as e:
             print(f"Error: Could not initialize OpenVR: {e}")
             print("Make sure SteamVR is running!")
